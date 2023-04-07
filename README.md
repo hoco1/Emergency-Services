@@ -18,7 +18,7 @@ The main menu options for the program are:
 
 Users can select options 1-3 as many times as they want, and all transactions will be stored in a table called "histories." The program uses the **command design pattern** to contact each department when a user reports an emergency.
 ## History Reports
-When a user selects "History" from the main menu, these reports type pop up::
+When a user selects "History" from the main menu, these reports type pop up:
 1. Show all services
 2. Show fire stain service
 3. Show ambulance service
@@ -26,7 +26,7 @@ When a user selects "History" from the main menu, these reports type pop up::
 5. Police service for woman 
 
 
-These reports are implemented based on queries to the database and then written on the command line.
+After choosing any report type, the program will query the database based on what the user wants, then show records on the command line and return to the main menu.
 ## Implementation
 The program is implemented in the command line or CLI. If a user wants to use and run the program, they will need to change the file name from **"app. config"** and modify the **"Server"** and **"Database"** variables accordingly. The program has been tested, and there are no known issues, but if any errors occur, please note them and report them.
 ## Libraries Used
