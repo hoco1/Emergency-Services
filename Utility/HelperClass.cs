@@ -11,7 +11,7 @@ namespace EmergencyServices
             for (int i = 0; i < 10; i++)
             {
                 User user = new User();
-                user.IdentityNumber = "1234585247" + i;
+                user.IdentityNumber = "123458524" + i;
                 user.Name = "name" + i;
                 user.Gender = i % 3;
                 user.Address = "address" + i;
@@ -21,41 +21,20 @@ namespace EmergencyServices
                 history.Request = DateTime.Now.AddDays(i);
                 history.user = user;
                 EmergencyServicesDB.InsertHistory(history);
-            }
-            
-            for (int i = 0; i < 10; i++)
-            {
-                User user = new User();
-                user.IdentityNumber = "1234585247" + i;
-                user.Name = "name" + i;
-                user.Gender = i % 3;
-                user.Address = "address" + i;
-                EmergencyServicesDB.InsertUser(user);
-                History history = new History();
-                history.ServiceType = "police";
-                history.Request = DateTime.Now.AddDays(i);
-                history.user = user;
-                EmergencyServicesDB.InsertHistory(history);
-            }
 
-                        for (int i = 0; i < 10; i++)
-            {
-                User user = new User();
-                user.IdentityNumber = "1234585247" + i;
-                user.Name = "name" + i;
-                user.Gender = i % 3;
-                user.Address = "address" + i;
-                EmergencyServicesDB.InsertUser(user);
-                History history = new History();
-                history.ServiceType = "fire";
-                history.Request = DateTime.Now.AddDays(i);
-                history.user = user;
-                EmergencyServicesDB.InsertHistory(history);
+                History history2 = new History();
+                history2.ServiceType = "police";
+                history2.Request = DateTime.Now.AddDays(i);
+                history2.user = user;
+                EmergencyServicesDB.InsertHistory(history2);
+
+                History history3 = new History();
+                history3.ServiceType = "fire";
+                history3.Request = DateTime.Now.AddDays(i);
+                history3.user = user;
+                EmergencyServicesDB.InsertHistory(history3);
             }
-
-            
-
-            
+              
         }
         public static void FilterHistory()
         {
@@ -72,11 +51,11 @@ namespace EmergencyServices
                     EmergencyServicesDB.SelectAllHistories();
                     break;
                 case 2:
-                    Console.WriteLine("Fire Services");
+                    Console.WriteLine("Fire Stations Services");
                     EmergencyServicesDB.SelectWhichService("fire");
                     break;
                 case 3:
-                    Console.WriteLine("Emergency Services");
+                    Console.WriteLine("Ambulance Services");
                     EmergencyServicesDB.SelectWhichService("medical");
                     break;
                 case 4:
@@ -118,8 +97,8 @@ namespace EmergencyServices
         {
             Console.WriteLine("Please select which history you want to view");
             Console.WriteLine($"{(int)HistoryList.AllServicesProvided}. All Services Provided");
-            Console.WriteLine($"{(int)HistoryList.FireServices}. Fire Services");
-            Console.WriteLine($"{(int)HistoryList.EmergencyServices}. Emergency Services");
+            Console.WriteLine($"{(int)HistoryList.FireServices}. Fire Stations Services");
+            Console.WriteLine($"{(int)HistoryList.EmergencyServices}. Ambulance Services");
             Console.WriteLine($"{(int)HistoryList.PoliceServiceForMen}. Police Service For Men");
             Console.WriteLine($"{(int)HistoryList.PoliceServicesForWomen}. Police Service For Women");
 
